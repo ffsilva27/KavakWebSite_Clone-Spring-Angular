@@ -1,0 +1,25 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="col-md-6 criacao-box">
+    <img src="../../assets/img/cadastro.PNG" alt="" srcset="">
+    <form [formGroup]="father" (ngSubmit)="cadastrar()">
+        <div class="rebelde-box">
+            <input class="formInput" type="text" formControlName="nome" placeholder=" ">
+            <label class="formLabel">Nome</label>
+        </div>
+        <div class="rebelde-box">
+            <input class="formInput" type="text" formControlName="email" placeholder=" ">
+            <label class="formLabel">E-Mail</label>
+        </div>
+        <div class="rebelde-box">
+            <input class="formInput" type="password" formControlName="senha" placeholder=" ">
+            <label class="formLabel">Senha</label>
+        </div>
+        <div class="checkbox">
+            <input type="checkbox" name="" id="">
+            <p>Aceito os <a>Termos e Condições</a> e a <a>Política de Privacidade</a> Kavak.</p>
+        </div>
+        <button>Seguinte</button>
+    </form>
+    <h6>Você já tem uma conta? <a href="/login">Iniciar sessão</a></h6>
+</div>

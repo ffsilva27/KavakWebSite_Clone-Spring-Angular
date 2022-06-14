@@ -1,0 +1,88 @@
+.criacao-box{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 30%;
+}
+
+.criacao-box .rebelde-box {
+    position: relative;
+}
+
+.criacao-box img{
+    margin-top: 5%;
+    margin-left: 30%;
+    margin-bottom: 10%;
+}
+
+.criacao-box .rebelde-box input {
+    width: 100%;
+    height: 50px;
+    padding: 10px ;
+    font-size: 15px;
+    margin-bottom: 30px;
+    border: 0.5px solid gray;
+    border-radius: 10px;
+}
+
+
+
+.criacao-box .rebelde-box input ~ label {
+    position: absolute;
+    top: 2%;
+    left: 3%;
+    padding: 10px 0;
+    font-size: 15px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.criacao-box .rebelde-box input:focus ~ .formLabel,
+.formInput:not(:placeholder-shown).formInput:not(:focus) ~ .formLabel {
+    top: -20px;
+    left: 10px;
+    text-align: center;
+    width: 55px;
+    color: #3374DB;
+    background-color: white;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+button {
+    width: 100%;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    margin-top: 2%;
+    height: 50px;
+}
+
+.checkbox {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items:center;
+}
+
+.checkbox input {
+    width: 15px;
+    height: 15px;
+}
+
+.checkbox p {
+    font-size: 12px;
+    margin-top: 3%;
+}
+
+.checkbox a {
+    color: #3374DB;
+    cursor: pointer;
+}
+
+h6{
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+}

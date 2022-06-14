@@ -1,0 +1,10 @@
+<div class="container-fluid container-search">
+    <div class="input-group input-group-lg container">
+        <input (change)="search($event)" type="text" class="form-control" placeholder="Busque por fabricante..." aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+        <span class="input-group-text" id="inputGroup-sizing-lg"><i class="bi bi-search"></i></span>
+    </div>
+</div>
+
+<div class="container-fluid col-md-10">
+    <p class="filtroPesquisa" *ngIf="pesquisado" >{{ valorPesquisado }} <button (click)="close()"><img class="exit" src="../../assets/img/x.svg" alt="" srcset=""></button></p>
+</div>

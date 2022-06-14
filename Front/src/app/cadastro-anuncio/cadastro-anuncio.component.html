@@ -1,0 +1,31 @@
+<app-nav-bar></app-nav-bar>
+
+<form [formGroup]="father" (ngSubmit)="criar()">
+    <div class="container">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" placeholder="Informe o fabricante" formControlName="fabricante">
+            <label for="floatingInput">Fabricante</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingPassword" placeholder="Informe o modelo" formControlName="modelo">
+            <label for="floatingPassword">Modelo</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingPassword" placeholder="Informe o ano do veículo" formControlName="anomodelo">
+            <label for="floatingPassword">Ano do modelo</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingPassword" placeholder="Informe o valor de venda" formControlName="valor">
+            <label for="floatingPassword">Valor de venda</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingPassword" placeholder="Informe a quilometragem atual" formControlName="km">
+            <label for="floatingPassword">Km atual</label>
+          </div>
+          <div class="input-group mb-3">
+            <input (change)="uploadFoto($event)" type="file" class="form-control" id="inputGroupFile02" formControlName="foto">
+          </div>
+          <button type="submit" class="btn btn-primary mb-3">Cadastrar</button>
+    </div>
+  </form>
+  

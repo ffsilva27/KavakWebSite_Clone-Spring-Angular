@@ -1,0 +1,26 @@
+.icone {
+    width: 100px;
+    height: 80px;
+}
+
+.nav-item-acessar{
+    margin-left: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-item-acessar a{
+    text-decoration: none;
+    color: gray;
+}
+
+.bi-person-circle{
+    margin-right: 5px;
+    color: gray;
+}
+
+.navbar{
+    height: 85px;
+    border-bottom: 2px solid gray;
+}

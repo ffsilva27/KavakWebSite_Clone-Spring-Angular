@@ -1,0 +1,18 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="col-md-6 criacao-box">
+    <img src="../../assets/img/login.PNG" alt="" srcset="">
+    <form [formGroup]="father" (ngSubmit)="login()">
+        <div class="rebelde-box">
+            <input class="formInput" type="text" formControlName="email" placeholder=" ">
+            <label class="formLabel">E-Mail</label>
+        </div>
+        <div class="rebelde-box">
+            <input class="formInput" type="password" formControlName="senha" placeholder=" ">
+            <label class="formLabel">Senha</label>
+        </div>
+        <button>Iniciar sessão</button>
+    </form>
+    <h6><a href="#">Esqueci minha senha</a></h6>
+    <h6>Não possui conta? <a href="/cadastro">Cadastre-se</a></h6>
+</div>

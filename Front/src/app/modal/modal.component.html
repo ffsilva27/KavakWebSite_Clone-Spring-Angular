@@ -1,0 +1,22 @@
+<div class="overlay" [ngClass]="{'dontShow':showModal}" >
+    <div class="exit">
+        <button (click)="show()"><img src="../../assets/img/x.svg" alt="" srcset=""></button>
+    </div>
+
+    <div class="bigContainer">
+        <div class="modal-container">
+            <div class="box-modal">
+                <img class="img-fluid imagem" [src]="listagemAnuncio.anuncio.foto" alt="" srcset="">
+                <div class="descritivo">
+                    <div class="descritivo-texto">
+                        <p class="veiculo">{{listagemAnuncio.anuncio.fabricante}} {{listagemAnuncio.anuncio.modelo}}</p>
+                        <div><span class="descricao">{{listagemAnuncio.anuncio.anomodelo}}</span> <span class="descricao"> - </span> <span class="descricao">{{listagemAnuncio.anuncio.km}}</span> <span class="descricao">Km</span></div>
+                        <div><span class="valor">R$ </span> <span class="valor">{{listagemAnuncio.anuncio.valor}}</span></div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>
+            
+                

@@ -1,0 +1,53 @@
+.container {
+    margin-top: 5%;
+}
+
+.valor {
+    color: #3976DB;
+    font-weight: bolder;
+}
+
+.veiculo {
+    font-weight: 800;
+}
+
+.descricao {
+    color: gray;
+    font-weight: 600;
+}
+
+.card {
+    padding: 0;
+    width: 40%;
+    margin: 2%;
+    border-radius: 10px;
+    box-shadow: 0 0 1em rgb(168, 167, 167);
+}
+
+.card:hover {
+    box-shadow: 0 0 3em rgb(83, 83, 83);
+    cursor: pointer;
+}
+
+.imagem {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.descritivo{
+    display: flex;
+    justify-content: space-between;
+    margin: 6%;
+}
+
+.descritivo-butao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alinharCards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
