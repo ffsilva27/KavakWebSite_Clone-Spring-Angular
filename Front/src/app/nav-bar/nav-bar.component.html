@@ -31,8 +31,9 @@
                       <i class="bi bi-person-circle"></i>
                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Minha conta</a>
                       <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="/cadastro">Cadastre-se</a></li>
-                        <li><a class="dropdown-item" href="/login">Iniciar sessão</a></li>
+                        <li><a class="dropdown-item" href="/cadastro" *ngIf="!trocarOpcaoMenu">Cadastre-se</a></li>
+                        <li><a class="dropdown-item" href="/login" *ngIf="!trocarOpcaoMenu">Iniciar sessão</a></li>
+                        <li><a class="dropdown-item" *ngIf="trocarOpcaoMenu" (click)="logout()">Fechar sessão</a></li>
                       </ul>
                   </li>
                 </ul>

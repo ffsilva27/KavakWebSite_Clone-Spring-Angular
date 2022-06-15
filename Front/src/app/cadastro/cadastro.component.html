@@ -16,10 +16,10 @@
             <label class="formLabel">Senha</label>
         </div>
         <div class="checkbox">
-            <input type="checkbox" name="" id="">
+            <input type="checkbox" name="" id="check" checked>
             <p>Aceito os <a>Termos e Condições</a> e a <a>Política de Privacidade</a> Kavak.</p>
         </div>
-        <button>Seguinte</button>
+        <button [disabled]="father.invalid">Seguinte</button>
     </form>
     <h6>Você já tem uma conta? <a href="/login">Iniciar sessão</a></h6>
 </div>

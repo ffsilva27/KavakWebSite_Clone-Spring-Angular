@@ -4,10 +4,11 @@ import { HomeComponent } from './home/home.component';
 import {CadastroAnuncioComponent} from '../app/cadastro-anuncio/cadastro-anuncio.component'
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './guards/auth-guard.service';
 
 const routes: Routes = [
   {path: "home", component: HomeComponent},
-  {path: "anuncio", component: CadastroAnuncioComponent},
+  {path: "anuncio", component: CadastroAnuncioComponent, canActivate: [AuthGuard]},
   {path: "login", component: LoginComponent},
   {path: "cadastro", component: CadastroComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full' },

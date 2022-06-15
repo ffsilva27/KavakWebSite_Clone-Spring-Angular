@@ -11,7 +11,7 @@
             <input class="formInput" type="password" formControlName="senha" placeholder=" ">
             <label class="formLabel">Senha</label>
         </div>
-        <button>Iniciar sessão</button>
+        <button [disabled]="father.invalid">Iniciar sessão</button>
     </form>
     <h6><a href="#">Esqueci minha senha</a></h6>
     <h6>Não possui conta? <a href="/cadastro">Cadastre-se</a></h6>

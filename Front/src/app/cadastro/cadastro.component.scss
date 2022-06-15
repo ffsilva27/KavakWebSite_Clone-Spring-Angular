@@ -52,11 +52,19 @@
 
 button {
     width: 100%;
+    font-size: 16px;
+    font-weight:600;
     background-color: black;
     color: white;
     border-radius: 10px;
     margin-top: 2%;
     height: 50px;
+}
+
+button:disabled {
+    background-color: #E9E9E9;
+    color: #8994A5;
+    border: none;
 }
 
 .checkbox {

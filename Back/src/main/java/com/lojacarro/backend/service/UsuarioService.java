@@ -13,6 +13,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class UsuarioService implements UserDetailsService {
 
@@ -37,6 +39,10 @@ public class UsuarioService implements UserDetailsService {
             return userDetails;
         }
         throw new SenhaInvalidaException("Senha inválida.");
+    }
+
+    public Optional<Usuario> findUsuario(String email){
+        return usuarioRepository.findByEmail(email);
     }
 
     @Override

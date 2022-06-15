@@ -1,3 +1,4 @@
+import { CadastroService } from './cadastro.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class CadastroComponent implements OnInit {
   father: FormGroup;
 
-  constructor(private fb:FormBuilder) {
+  constructor(private fb:FormBuilder, private cadastroService: CadastroService) {
     this.father = fb.group({
       nome: ["", Validators.required],
       email: ["", Validators.required],
@@ -21,7 +22,10 @@ export class CadastroComponent implements OnInit {
   }
 
   cadastrar(){
-    console.log(this.father.get(['nome'])?.value, this.father.get(['email'])?.value, this.father.get(['senha'])?.value)
+    this.cadastroService.cadastrarUsuario(this.father.get(['nome'])?.value, this.father.get(['email'])?.value, this.father.get(['senha'])?.value)
+    .subscribe(res => {
+      alert(res.msg);
+    })
   }
 
 }

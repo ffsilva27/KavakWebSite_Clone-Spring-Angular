@@ -17,6 +17,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/usuario")
+@CrossOrigin("http://localhost:4200")
 public class UsuarioController {
     @Autowired
     private PasswordEncoder encoder;
@@ -30,9 +31,16 @@ public class UsuarioController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public UsuarioSalvoDTO salvar(@RequestBody Usuario usuario){
-        usuario.setSenha(encoder.encode(usuario.getSenha()));
-        usuario.setRole("ADMIN");
-        return usuarioService.salvar(usuario);
+        if (usuarioService.findUsuario(usuario.getEmail()).isPresent()){
+            return UsuarioSalvoDTO.builder()
+                    .email(usuario.getEmail())
+                    .msg("Usuário já possui registro em nosso banco de dados!")
+                    .build();
+        }else{
+            usuario.setSenha(encoder.encode(usuario.getSenha()));
+            usuario.setRole("ADMIN");
+            return usuarioService.salvar(usuario);
+        }
     }
 
     @PostMapping("/auth")
