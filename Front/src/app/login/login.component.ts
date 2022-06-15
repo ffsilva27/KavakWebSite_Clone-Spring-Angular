@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
     this.loginService.login(this.father.get(['email'])?.value, this.father.get(['senha'])?.value)
     .subscribe(res => {
       console.log(res)
-      if(res){
+      if(res.error){
         alert('Usuário não encontrado!')
       }else{
         localStorage.setItem('token', res.token);
