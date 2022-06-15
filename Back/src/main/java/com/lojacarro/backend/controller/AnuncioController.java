@@ -32,7 +32,7 @@ public class AnuncioController {
         return anuncioService.findAll(anuncio, pageable);
     }
 
-    @PostMapping
+    @PostMapping("/salvar")
     @ResponseStatus(HttpStatus.CREATED)
     public void saveAnuncio(@RequestBody AnuncioDTO anuncioDTO){
         anuncioService.saveAnuncio(anuncioDTO);

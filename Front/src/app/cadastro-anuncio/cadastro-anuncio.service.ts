@@ -8,7 +8,7 @@ import { environment as env } from 'src/environments/environment';
 })
 export class CadastroAnuncioService {
 
-  path: string = "anuncio";
+  path: string = "anuncio/salvar";
 
   constructor(private http: HttpClient) { }
 
