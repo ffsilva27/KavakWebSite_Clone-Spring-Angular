@@ -20,7 +20,7 @@ import java.nio.file.Paths;
 @Slf4j
 @RestController
 @RequestMapping("/anuncio")
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin(value = "http://localhost:4200")
 public class AnuncioController {
 
     @Autowired

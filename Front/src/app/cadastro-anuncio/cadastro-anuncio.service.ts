@@ -1,3 +1,4 @@
+import { LoginService } from './../login/login.service';
 import { anuncioInfo } from './../listagem-anuncio/listagem-anuncio.service';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -10,12 +11,10 @@ export class CadastroAnuncioService {
 
   path: string = "anuncio/salvar";
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private loginService:LoginService) { }
 
   cadastrarAnuncio(fabricante:string, modelo: string, anomodelo:string, valor: number, km:string, foto:string){
-    console.log(foto);
     var nomeArquivo = foto.split("\\")[2];
-    console.log(nomeArquivo);
     return this.http.post<anuncioInfo>(env.baseUrl + this.path, {
       fabricante: fabricante,
       modelo: modelo,
@@ -23,6 +22,6 @@ export class CadastroAnuncioService {
       valor: valor,
       km: km,
       foto: nomeArquivo
-    });
+    },this.loginService.headers());
   }
 }
