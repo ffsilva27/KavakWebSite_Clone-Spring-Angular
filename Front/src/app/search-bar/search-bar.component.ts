@@ -23,12 +23,16 @@ export class SearchBarComponent implements OnInit {
         event.target.value='';
         this.listagemAnuncioService.obterListagem().subscribe(res => {
           this.listagemAnuncioService.anuncioList = res.content;
+          this.listagemAnuncioService.primeiraPagina = res.first;
+          this.listagemAnuncioService.ultimaPagina = res.last;
         })
       }else{
         this.valorPesquisado = this.converte(event.target.value);
         this.pesquisado = true;
         event.target.value='';
         this.listagemAnuncioService.anuncioList = res.content;
+        this.listagemAnuncioService.primeiraPagina = res.first;
+        this.listagemAnuncioService.ultimaPagina = res.last;
       }
     })
   }
@@ -42,6 +46,9 @@ export class SearchBarComponent implements OnInit {
     this.pesquisado = false;
     this.listagemAnuncioService.obterListagem().subscribe(res => {
       this.listagemAnuncioService.anuncioList = res.content;
+      this.listagemAnuncioService.primeiraPagina = res.first;
+      this.listagemAnuncioService.ultimaPagina = res.last;
+      this.listagemAnuncioService.paginaAtual = 0;
     })
   }
 

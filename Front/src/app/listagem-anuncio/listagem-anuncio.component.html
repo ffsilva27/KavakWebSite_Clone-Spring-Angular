@@ -17,3 +17,14 @@
 </div>
 
 <app-modal #modalListagem ></app-modal>
+
+<nav aria-label="Navegação de página exemplo">
+    <ul class="pagination justify-content-center">
+      <li class="page-item" [ngClass]="{'disabled' : listagemAnuncioService.primeiraPagina}" >
+        <a class="page-link" (click)="alterarPagina($event)">Anterior</a>
+      </li>
+      <li class="page-item" [ngClass]="{'disabled' : listagemAnuncioService.ultimaPagina}">
+        <a class="page-link"  (click)="alterarPagina($event)">Próximo</a>
+      </li>
+    </ul>
+  </nav>

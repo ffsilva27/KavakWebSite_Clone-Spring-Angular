@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { CadastroAnuncioService } from './cadastro-anuncio.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
@@ -14,7 +15,7 @@ export class CadastroAnuncioComponent implements OnInit {
 
   caminhoSalvarImagem: string = "http://localhost:4200/assets/img"
   
-  constructor(private fb: FormBuilder, private http: HttpClient, private cadastroAnuncioService:CadastroAnuncioService) { 
+  constructor(private fb: FormBuilder, private http: HttpClient, private cadastroAnuncioService:CadastroAnuncioService, private router:Router) { 
     this.father = fb.group({
       fabricante:["", Validators.required],
       modelo:["", Validators.required],
@@ -45,6 +46,11 @@ export class CadastroAnuncioComponent implements OnInit {
     this.cadastroAnuncioService.cadastrarAnuncio(this.father.get(['fabricante'])?.value, this.father.get(['modelo'])?.value,this.father.get(['anomodelo'])?.value,this.father.get(['valor'])?.value,this.father.get(['km'])?.value,this.father.get(['foto'])?.value)
       .subscribe(res => {
         console.log(res);
+        if(res.msg=="Anuncio cadastrado com sucesso!"){
+          this.router.navigate(['/home'])
+        }else{
+          alert("Todos os campos do formulário são de preenchimento obrigatório!");
+        }
       })
   }
 

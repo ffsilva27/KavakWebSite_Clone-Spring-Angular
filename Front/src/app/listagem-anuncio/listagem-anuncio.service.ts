@@ -18,6 +18,9 @@ export interface anuncioInfo {
 export class ListagemAnuncioService {
 
   private readonly PATH:string = "anuncio"
+  primeiraPagina: boolean = true;
+  ultimaPagina: boolean = true;
+  paginaAtual:number = 0;
 
   constructor(private http:HttpClient) { }
 
@@ -45,6 +48,10 @@ export class ListagemAnuncioService {
 
   obterListagemPorFabricante(fabricante: string): Observable<any> {
     return this.http.get(env.baseUrl + this.PATH + '?fabricante='+fabricante);
+  }
+
+  obterListagemPaginada(pagina:number): Observable<any> {
+    return this.http.get(env.baseUrl + this.PATH + '?page='+pagina);
   }
 
 }

@@ -13,6 +13,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -30,7 +31,7 @@ public class UsuarioController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public UsuarioSalvoDTO salvar(@RequestBody Usuario usuario){
+    public UsuarioSalvoDTO salvar(@RequestBody @Valid Usuario usuario){
         if (usuarioService.findUsuario(usuario.getEmail()).isPresent()){
             return UsuarioSalvoDTO.builder()
                     .email(usuario.getEmail())
@@ -44,7 +45,7 @@ public class UsuarioController {
     }
 
     @PostMapping("/auth")
-    public TokenDTO autenticar(@RequestBody CredenciaisDTO credenciaisDTO){
+    public TokenDTO autenticar(@RequestBody @Valid CredenciaisDTO credenciaisDTO){
         Usuario usuario = Usuario.builder()
                 .email(credenciaisDTO.getEmail())
                 .senha(credenciaisDTO.getSenha())

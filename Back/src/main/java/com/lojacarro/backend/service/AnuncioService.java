@@ -6,10 +6,7 @@ import com.lojacarro.backend.repository.AnuncioRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.ExampleMatcher;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -30,12 +27,13 @@ public class AnuncioService {
     @Value("${caminho.pasta.foto.front}")
     private String caminhoPasta;
 
-    private int idTeste = 4;
+    private int idTeste = 7;
 
     public Page<Anuncio> findAll(Anuncio anuncio, Pageable pageable){
         ExampleMatcher matcher = ExampleMatcher.matching().withIgnoreCase();
         Example example = Example.of(anuncio, matcher);
-        return anuncioRepository.findAll(example, pageable);
+        Pageable pageable1 = PageRequest.of(pageable.getPageNumber(), 4, Sort.by("valor").descending());
+        return anuncioRepository.findAll(example, pageable1);
     }
 
     public void salvarFoto(MultipartFile foto) {
@@ -67,7 +65,6 @@ public class AnuncioService {
                 .foto(this.caminhoPasta+anuncioDTO.getFoto())
                 .build();
         this.idTeste++;
-        System.out.println(anuncio.getFoto());
         anuncioRepository.save(anuncio);
     }
 
