@@ -1,4 +1,4 @@
-# :man_technologist: Clone Parcial Site Kavak - FullStack :man_student:
+# :man_technologist: Clone Parcial Site Kavak - FullStack :man_technologist:
 
 O projeto consistiu em desenvolver o clone parcial do site de compra e venda de veículos Kavak.
 O front-end foi desenvolvido em Angular e o back-end foi desenvolvido com Spring, ambos estão neste mesmo repositório.
