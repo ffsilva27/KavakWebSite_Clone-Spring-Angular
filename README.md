@@ -13,12 +13,11 @@ ________________________________________________________________________________
 ### :scroll: Atividade
 
 Construção de uma API e um FRONT que possibilite:
- - Publicação de anuncios;
- - Listagem de todos os anuncios paginada;
- - Criação de tela de login;
- - Criação de tela de cadastro de usuário;
- - Criação de tela de cadastro dos anuncios;
- - Acesso a tela de cadastro dos anuncios apenas com usuário válido logado e com token JWT;
+ - Listagem paginada de todos os anuncios;
+ - Criação de tela e funcionalidade do login com armazenamento do token JWT;
+ - Criação de tela e funcionalidade do cadastro de usuário;
+ - Criação de tela e funcionalidade do cadastro dos anuncios;
+ - Acesso a tela de cadastro dos anuncios apenas com usuário válido logado e com token JWT sendo enviado para validação da API no header da requisição;
  - Criação de modal para exibição de maiores informações sobre o veículo anunciado;
  - Criação de barra de pesquisa por fabricantes cadastrados.
 
