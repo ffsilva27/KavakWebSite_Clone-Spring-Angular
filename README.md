@@ -25,6 +25,12 @@ Construção de uma API e um FRONT que possibilite:
 
 ___________________________________________________________________________________________________________________________________________________________________
 
+[![Vídeo de utilização do site](/Capturar.PNG)](https://youtu.be/zre9YGTA4dE)
+
+### Obs.: Clicando na imagem você será direcionado para assistir o projeto funcionando.
+
+__________________________________________________________________________________________________________
+
 ### :chains: Tecnologias
 - Java
 - Spring (Data JPA | Security | MVC)
