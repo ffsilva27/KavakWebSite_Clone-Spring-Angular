@@ -5,7 +5,7 @@ O front-end foi desenvolvido em Angular e o back-end foi desenvolvido com Spring
 
 
 Obs.: Para o correto funcionamento, o projeto deverá ser clonado na raiz da pasta C:, tendo em vista que a solução para salvar as imagens dos anúncios
-foi em pasta local e não utilizando um servidor na núvem. Dito isto, na pasta C: crie uma pasta de nome qualquer e copie as pastas front e back que estão
+foi em pasta local e não utilizando um servidor na núvem. Dito isto, na pasta C: crie uma pasta de nome LojaCarro e copie as pastas front e back que estão
 neste repositório.
 
 ___________________________________________________________________________________________________________________________________________________________________
